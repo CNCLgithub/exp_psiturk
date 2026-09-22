@@ -1,0 +1,64 @@
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Packages #
+############
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Containers #
+#####################
+*.simg
+*.sif
+cont
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+venv/
+
+# C extensions
+*.so
+
+# Files and Folders #
+######################
+psiturk/static/stimuli_images/*
+psiturk/static/stimuli_videos/*
+out/*
+
+!*.gitkeep
+.idea
+
+psiturk/.psiturk_history
+

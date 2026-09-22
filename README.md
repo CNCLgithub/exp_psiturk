@@ -1,0 +1,92 @@
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](https://opensource.org/licenses/MIT)
+
+# Building experiments with Psiturk
+This repository contains helper code to bootstrap experiment building using Psiturk. 
+Although Psiturk as a framework is largely defunct, the existing functionalities are rich enough to support the development of a simple experiment.
+The code is written in vanilla JS and Python.
+
+## Getting Started
+
+### Working with Apptainer (or Singularity)
+The entire codebase is set up so that it can conveniently be run via [Apptainer](https://apptainer.org/docs/user/main/introduction.html) (or Singularity). 
+
+### Install Apptainer
+```bash
+sudo apt install -y software-properties-common
+sudo add-apt-repository -y ppa:apptainer/ppa
+sudo apt update
+sudo apt install -y apptainer
+```
+
+### Setup
+Download the Apptainer containers (~ 2 mins)
+```bash
+./setup.sh cont_pull
+```
+
+If you prefer to build the Apptainer container yourself (~ 5 mins)
+```bash
+./setup.sh cont_build
+```
+
+### 🖥️ System Requirements
+
+This project has been tested on Linux (Ubuntu 18.04, 20.04, and 24.04). 
+However, you should be able to use any operating system supported by [Apptainer](https://apptainer.org/docs/user/main/introduction.html).
+
+## Experimental Workflow
+The Psiturk frontend transitions through a predefined stack of `HTML` views, all contained in the [templates](psiturk/templates) folder.
+The Psiturk backend, which manages the progression between the different stages of an experiment (see below), is implemented in [task.js](psiturk/static/js/task.js) and primarily interfaces with the [main.html](psiturk/templates/main.html).
+
+### Preparing the Experiment
+A typical behavioral experiment would abide by the following stage progression:
+
+1. Instructions
+2. Practice 
+3. Quiz 
+4. Main Experiment 
+5. Questionnaire
+
+The codebase implements each stage in an independent `.js` file as a class that inherits from the [Page](psiturk/static/js/utils.js). 
+The `Page` class provides all the core functionality required to implement the frontend.
+
+### Run the Experiment
+Once the experiment is ready, run the following command to launch the experiment:
+```bash
+./run_local.sh
+```
+This will create a local server at the port specified in the [config.txt](psiturk/config.txt) file. 
+The default value for the port is `22367` and therefore the experiment will run on the URL `http://0.0.0.0:22367`.
+When deployed on a public server, the server’s URL at this port would be the address shared with participants (for example, via Prolific).  
+
+When a participant visits the URL, Psiturk assigns a unique identifier to the participant and logs all details from the session, including the participant's responses, into the `participants.db` file.
+The Python code provided in [parse_data.py](analysis/parse_data.py) can be used to extract the data from the database file into a CSV file.
+Please note that the database itself will be named based on the value of `title` in the [config.txt](psiturk/config.txt) file. So, ensure that `EXP_DB_NAME` in `parse_data.py` is set to the correct value before you run this file.
+
+IMPORTANT: `Prolific`, or a similar participant-recruitment platform, may require the experiment to redirect participants back to the platform after they have completed the study, using the appropriate completion code (so that they can be paid). 
+This return URL should be specified in the [complete.html](psiturk/templates/complete.html) file.
+
+### Stimulus and Trials
+All stimuli videos and images must be stored under the [static](psiturk/static) folder to make them directly accessible to the frontend.
+The [condition_list.json](psiturk/static/data/condition_list.json) file specifies the order in which the stimuli are presented to the participant.
+When each participant visits the experiment URL, Psiturk runs [stimulus.py](psiturk/stimulus.py) (via [custom.py](psiturk/custom.py)) code to generate the condition list for the participant. Therefore, any schema to randomize stimulus presentation should be implemented in the `stimulus.py` file. 
+
+The codebase maintains a record of each `condition_list.json` file generated, all of which are stored in the [data](psiturk/static/data) folder. 
+
+All data structures concerning the information collected from the participant on each trial are specified in [trial_data.js](psiturk/static/js/trial_data.js).
+The frontend of each trial is implemented in [trial_page.js](psiturk/static/js/trial_page.js). The `register_response` function implemented in [task.js](psiturk/static/js/task.js) is ultimately responsible for the data recorded into the `participants.db` file in each trial.
+
+### Stop the Experiment
+Once the data collection is complete, run the following command to end the experiment:
+```bash
+./stop_local.sh
+```
+This will only kill the Psiturk process. The database file `participants.db` will remain intact.
+
+The codebase also provides a convenient solution to deleting all files generated by an experimental run. 
+```bash
+./stop_local.sh
+```
+This is particularly useful for keeping the repository clean between debugging sessions or when debugging immediately before publishing the experiment.
+
+---

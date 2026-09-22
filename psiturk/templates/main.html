@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css" type="text/css"/>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/slider.css">
+    <title></title>
+</head>
+
+<body style="margin:25px;">
+    <div id="full_screen_element">
+
+        <div id="generic_section" style="margin: 30px; display: none; overflow:hidden;">
+            <div class="login-form">
+
+                <div class="row_blank"></div>
+
+                <div class="header" style="text-align: center">
+                    <h1 id="generic_page_title" style="color: darkred">ERROR: Sorry!</h1>
+                </div>
+
+                <div class="content" style="text-align: center">
+                    <h3 id="generic_page_message">
+                        You did not answer all comprehension questions correctly.<br>
+                        Press <b>continue</b> to review the instructions again.
+                    </h3>
+                </div>
+
+                <div class="row_blank"></div>
+
+                <div class="footer" style="text-align: center">
+                    <button type="button"
+                            class="btn btn-danger btn-lg continue"
+                            id="generic_page_button"
+                            value="Continue">Continue
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="instructions_section" style="display: none; overflow:hidden;">
+            <div class="row_blank"></div>
+
+            <div class="row" style="text-align: center">
+                <h1>Instructions:</h1>
+            </div>
+
+            <div class="row_blank_25"></div>
+
+            <div id="instructions" class="row constrained_text_view unselectable" style="text-align: start">
+                <h2>Thank you so much for participating in this study and helping us with our research.</h2>
+            </div>
+
+            <div class="row_blank_25"></div>
+
+            <div id="instructions_img_div" class="row" style="text-align: center">
+                <img id="instructions_img"
+                     class="center_image_container"
+                     src="../static/images/plus.png"
+                     alt="Instructions Image"
+                     style="width: 650px;">
+            </div>
+
+            <div id="instructions_video_div" class="row" style="text-align: center">
+                <video id="instructions_video" width="900" autoplay muted style="overflow:hidden;">
+                    <source src="" type="video/mp4">
+                    We were unable to display the stimuli. It seems your browser is incompatible.
+                </video>
+            </div>
+
+            <div class="row_blank_25"></div>
+
+            <div class="row">
+                <div class="column left" style="width: 46%;"></div>
+                <div class="column middle center-block unselectable"
+                     style="width: 8%;
+                                    -moz-user-select: none;
+                                    -webkit-user-select: none;
+                                    -ms-user-select:none;
+                                    -o-user-select:none;
+                                    user-select:none;"
+                     onmousedown="return false;">
+                    <a id="next_instruction" class="button5" style="background-color:#42cc8c;">NEXT</a>
+                </div>
+                <div class="column right" style="width: 46%;"></div>
+            </div>
+        </div>
+
+        <div id="trials_section" style="height:100%; width:100%; overflow:auto;">
+            <div id="trial_interim_display_div"
+                 style="position: absolute; top: 40%; left: 50%; transform: translate(-50%, -50%);">
+                <img id="trial_interim_display_img"
+                     class="center_image_container"
+                     src="../static/images/plus.png"
+                     alt="Interim Image"
+                     style="width: 50px;">
+            </div>
+
+            <div id="trial_main_display_div" style="display: none; height:100%; width:100%;">
+                <div class="row_blank"></div>
+
+                <div id="trial_video_div" class="row" style="text-align: center">
+                    <video id="trial_video" width="1100" autoplay>
+                        <source src="" type="video/mp4">
+                        We were unable to display the stimuli. It seems your browser is incompatible.
+                    </video>
+                </div>
+
+                <div class="row_blank_25"></div>
+
+                <div class="row" style="text-align: center">
+                    <h2 id="trial_question_prompt">How difficult would it be for the agent to reach the right-most platform?</h2>
+                </div>
+
+                <div id="trial_slider_div" class="row">
+                    <div class="column left" style="width: 30%; height: 110px"></div>
+                    <div class="column middle" style="width: 40%; height: 110px">
+                        <div class="tick-slider">
+                            <div class="tick-slider-header">
+                                <h3><label id="left_option_text" for="trial_slider">0 (very easy)</label></h3>
+                                <h2></h2>
+                                <h3 id="right_option_text" style="text-align: right">100 (very difficult)</h3>
+                            </div>
+                            <div class="tick-slider-background"></div>
+                            <div id="weightTicks" class="tick-slider-tick-container"></div>
+                            <input id="trial_slider"
+                                   class="tick-slider-input"
+                                   type="range"
+                                   min="0"
+                                   max="100"
+                                   step="1"
+                                   value="50"
+                                   data-tick-step="10"
+                                   data-tick-id="weightTicks"
+                                   data-value-id="weightValue"
+                                   data-progress-id="weightProgress"
+                                   data-handle-size="18"
+                                   data-min-label-id="weightLabelMin"
+                                   data-max-label-id="weightLabelMax"/>
+                            </div>
+                        </div>
+                    <div class="column right" style="width: 30%; height: 110px"></div>
+                </div>
+
+                <div class="row">
+                    <div class="column left" style="width: 46%;"></div>
+                    <div class="column middle center-block unselectable" style="width: 8%;" onmousedown="return false;">
+                        <a id="trial_next_button" class="button5" style="background-color:#42cc8c;">NEXT</a>
+                        <div class="row" style="text-align: center; padding-left: 14px">
+                            <h4 id="trial_progress">11 / 17</h4>
+                        </div>
+                    </div>
+                    <div class="column right" style="width: 46%;"></div>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="questionnaire_section" style="margin:25px; height:100%; width:100%; overflow-y: visible">
+            <h1 style="text-align: center; color: darkgreen">Congratulations! You are done with the experiment!</h1>
+            <h3 style="text-align: center">Thank you for your contributions to science.</h3>
+
+            <hr/>
+
+            <h2><u>One final step:</u> Could you please answer the following questions? <br></h2>
+
+            <form id="post_exp_questionnaire" method="post">
+
+                <div class="row_blank_25"></div>
+
+                <div class="row question">
+                    <div class="col-md-8">
+                        <h3>Did all the videos appear clearly on your screen?</h3>
+                        <label for="questionnaire_1"></label>
+                        <select id="questionnaire_1" name="questionnaire_1" style="padding-left: 50px; padding-right: 50px">
+                            <option value="Yes" SELECTED>Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row_blank_25"></div>
+
+                <div class="row question">
+                    <div class="col-md-8">
+                        <h3>On a scale of 1-10 (where 10 is the most engaged), please rate how <b>ENGAGING</b> you found the
+                            task:</h3>
+                        <label for="questionnaire_2"></label>
+                        <select id="questionnaire_2" name="questionnaire_2" style="padding-left: 50px; padding-right: 50px">
+                            <option value="10">10 - Very engaging</option>
+                            <option value="9">9</option>
+                            <option value="8">8</option>
+                            <option value="7">7</option>
+                            <option value="6">6</option>
+                            <option value="5" SELECTED>5 - Moderately</option>
+                            <option value="4">4</option>
+                            <option value="3">3</option>
+                            <option value="2">2</option>
+                            <option value="1">1</option>
+                            <option value="0">0 - Not engaged</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row_blank_25"></div>
+
+                <div class="row question">
+                    <div class="col-md-8">
+                        <h3>On a scale of 1-10 (where 10 is the most difficult), please rate how <b>DIFFICULT</b> you found
+                            the task:</h3>
+                        <label for="questionnaire_3"></label>
+                        <select id="questionnaire_3" name="questionnaire_3" style="padding-left: 50px; padding-right: 50px">
+                            <option value="10">10 - Very difficult</option>
+                            <option value="9">9</option>
+                            <option value="8">8</option>
+                            <option value="7">7</option>
+                            <option value="6">6</option>
+                            <option value="5" SELECTED>5 - Moderately difficult</option>
+                            <option value="4">4</option>
+                            <option value="3">3</option>
+                            <option value="2">2</option>
+                            <option value="1">1</option>
+                            <option value="0">0 - Not difficult at all</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4" style="display: flex; justify-content: flex-end;">
+
+                    </div>
+                </div>
+
+                <div class="row_blank_25"></div>
+
+                <div class="row question">
+                    <div class="col-md-8">
+                        <h3>
+                            Did you ever switch tabs during the task, open another application, or otherwise skip some or
+                            all of the tasks? (you will get paid regardless of your answer to this question)
+                        </h3>
+                        <label for="questionnaire_4"></label>
+                        <select id="questionnaire_4" name="questionnaire_4" style="padding-left: 50px; padding-right: 50px">
+                            <option value="Yes">Yes</option>
+                            <option value="No" SELECTED>No</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row_blank_25"></div>
+
+                <div class="row_blank_25"></div>
+
+                <h3>Are there any other comments you would like to provide? <br></h3>
+                <div class="row_blank_tiny"></div>
+                <label for="questionnaire_5"></label>
+                <textarea name="questionnaire_5"
+                          rows="4"
+                          cols="100"
+                          id="questionnaire_5"
+                          placeholder="Enter your comments here"></textarea>
+            </form>
+
+            <div class="footer" style="text-align: center">
+                <button type="button"
+                        class="btn btn-primary btn-lg"
+                        id="next_questionnaire">Finish
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

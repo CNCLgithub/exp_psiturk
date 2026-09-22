@@ -1,0 +1,422 @@
+@import url("http://fonts.googleapis.com/css?family=Crimson+Text:400,600italic");
+@import url("http://fonts.googleapis.com/css?family=Roboto");
+@import url("http://fonts.googleapis.com/css?family=Exo+2:200,300,400");
+
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: white;
+    color: black;
+    font-size: 13pt;
+}
+
+
+#container-not-an-ad, #container-error, #container-exp, #container-consent, #container-instructions, #container-questionnaire {
+    background: white;
+    margin: 30px;
+}
+
+
+/* Questionnaire */
+
+h1.questionnaire_header {
+    font-family: "Exo 2", 'Roboto', sans-serif;
+    font-size: 20pt;
+    text-align: center;
+    padding: 40px;
+
+}
+
+input {
+    width: 200px;
+    height: 50px;
+    font-size: 22pt;
+}
+
+.questionnaire {
+    text-align: center;
+}
+
+.questionnaire /*.continue*/
+{
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 40px;
+
+}
+
+.questionnaire h1 {
+    text-align: center;
+}
+
+.questionnaire p {
+    text-align: left;
+}
+
+.questionnaire #warning {
+    color: red;
+    font-weight: bold;
+}
+
+.questionnaire table {
+    margin: 0 auto;
+
+    /* Border stuff: */
+    table-layout: fixed;
+    border-collapse: separate;
+    border-spacing: 0.25em;
+    border: none;
+}
+
+.questionnaire tr {
+    display: block;
+    border-bottom: 1px dashed white;
+}
+
+.questionnaire tr:last-child {
+    border: 0;
+}
+
+.questionnaire td {
+    padding-right: 0.25em;
+    vertical-align: middle;
+    border-width: 0 1px;
+    border: none;
+    margin: 20px;
+    padding-bottom: 10px;
+}
+
+.questionnaire td:first-child, td + td {
+    border-left: 0;
+}
+
+.questionnaire td:last-child {
+    padding-right: 0;
+    border-right: 0;
+}
+
+.answer {
+    text-align: left;
+    padding-left: 3em;
+}
+
+.questionnaire .question_text {
+    vertical-align: top;
+    width: 300px;
+    margin: 20px;
+    font-size: 1.0em;
+}
+
+.question_text em {
+    font-size: 70%;
+}
+
+.questionnaire textarea {
+    width: 320px;
+    height: 130px;
+}
+
+.questionnaire form {
+    text-align: right;
+}
+
+.questionnaire ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Consent */
+
+.legal {
+    text-align: justify;
+    font-size: 11pt;
+    line-height: 1.1em;
+}
+
+
+/* Trials */
+
+#full_screen_element:-webkit-full-screen {
+    width: 100%;
+    height: 100%;
+    background-color: #FFFFFF;
+    margin: 0;
+}
+
+#full_screen_element:-moz-full-screen {
+    background-color: #FFFFFF;
+    margin: 0;
+}
+
+#full_screen_element:-ms-fullscreen {
+    background-color: #FFFFFF;
+    margin: 0;
+}
+
+#full_screen_element:fullscreen {
+    background-color: #FFFFFF;
+    margin: 0;
+}
+
+.center_div {
+    margin: auto auto;
+    text-align: end;
+    /*padding-right: 5vmin;*/
+}
+
+img.center_image_container {
+    display: block;
+    margin: auto;
+}
+
+img.center_image_container_special {
+    margin: auto;
+    display: block;
+    transform: translateY(100%);
+}
+
+#task_container {
+    position: relative;
+}
+
+a.button5 {
+    display: block;
+    padding: 0.5em 0;
+    border: 0.15em solid #000000;
+    margin: 0 0 0 8px;
+    border-radius: 0.12em;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    color: #000000;
+    text-shadow: 0 0.04em 0.04em rgba(0, 0, 0, 0.35);
+    background-color: #FFFFFF;
+    text-align: center;
+    transition: all 0.15s;
+    width: 100%;
+    align-items: center;
+    justify-content: center
+}
+
+a.button5:hover {
+    text-shadow: 0 0 2em rgba(255, 255, 255, 1);
+    color: #FFFFFF;
+    border-color: #000000;
+    cursor: pointer;
+}
+
+@media all and (max-width: 50em) {
+    a.button5 {
+        display: block;
+    }
+}
+
+.row_blank {
+    height: 100px !important; /* overwrites any other rules */
+    background-color: #FFFFFF;
+}
+
+.row_blank_50 {
+    height: 50px !important; /* overwrites any other rules */
+    background-color: #FFFFFF;
+}
+
+.row_blank_25 {
+    height: 25px !important; /* overwrites any other rules */
+    background-color: #FFFFFF;
+}
+
+.row_blank_tiny {
+    height: 1px !important; /* overwrites any other rules */
+    background-color: #FFFFFF;
+}
+
+.column {
+    float: left;
+    padding: 10px 10px 10px 10px;
+    height: 300px; /* Should be removed. Only for demonstration */
+}
+
+.left, .right {
+    width: 25%;
+}
+
+.middle {
+    width: 50%;
+    justify-content: center;
+    align-content: center;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.maxed_row {
+    height: 100px !important; /* overwrites any other rules */
+    display: block;
+    width: 100%;
+    min-width: 100% !important;
+    align-content: center;
+    justify-content: center;
+}
+
+select {
+    color: black;
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+    font-size: 20px;
+}
+
+option {
+    color: black;
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+    font-size: 20px;
+}
+
+label {
+    color: black;
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+}
+
+.constrained_text_view {
+    word-wrap: break-word;
+    margin: auto;
+    width: 900px;
+    text-align: center;
+    align-content: center;
+}
+
+
+/* Common */
+
+h1 {
+    margin-top: 0;
+    color: black;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bolder;
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+}
+
+h2 {
+    color: black;
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+}
+
+h3 {
+    color: black;
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+}
+
+h4 {
+    color: black;
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+}
+
+dl {
+    color: #505050;
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+}
+
+p {
+    color: black;
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+}
+
+
+*.unselectable {
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+}
+
+
+/* Radio Button */
+.radio {
+    position: relative;
+    cursor: pointer;
+}
+
+.radio .label {
+    position: relative;
+    display: block;
+    width: 50px;
+    height: 50px;
+    border: 5px solid #C8CCD4;
+    border-radius: 100%;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.radio .label:after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 36px;
+    height: 36px;
+    border-radius: 100%;
+    background: #e8bb2c;
+    transform: scale(0);
+    transition: all 0.2s ease;
+    opacity: 0.08;
+    pointer-events: none;
+}
+
+.radio:hover .label:after {
+    transform: scale(2.5);
+}
+
+input[type="radio"]:checked + .label {
+    border-color: #e8bb2c;
+}
+
+input[type="radio"]:checked + .label:after {
+    transform: scale(1);
+    transition: all 0.2s cubic-bezier(0.35, 0.9, 0.4, 0.9);
+    opacity: 1;
+}
+
+.cntr {
+    position: absolute;
+    top: calc(50% - 10px);
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.hidden_radio {
+    display: none;
+}

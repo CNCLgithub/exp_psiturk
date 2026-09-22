@@ -1,0 +1,98 @@
+{
+  "practice": [
+    {
+      "trial_id": 0,
+      "trial_video_name": "diff_0_2.mp4"
+    }
+  ],
+  "stimulus": [
+    {
+      "trial_id": 5,
+      "trial_video_name": "diff_5_2.mp4"
+    },
+    {
+      "trial_id": 8,
+      "trial_video_name": "diff_8_2.mp4"
+    },
+    {
+      "trial_id": 4,
+      "trial_video_name": "diff_4_1.mp4"
+    },
+    {
+      "trial_id": 11,
+      "trial_video_name": "diff_11_1.mp4"
+    },
+    {
+      "trial_id": 18,
+      "trial_video_name": "diff_18_1.mp4"
+    },
+    {
+      "trial_id": 9,
+      "trial_video_name": "diff_9_2.mp4"
+    },
+    {
+      "trial_id": 15,
+      "trial_video_name": "diff_15_1.mp4"
+    },
+    {
+      "trial_id": 10,
+      "trial_video_name": "diff_10_1.mp4"
+    },
+    {
+      "trial_id": 3,
+      "trial_video_name": "diff_3_1.mp4"
+    },
+    {
+      "trial_id": 7,
+      "trial_video_name": "diff_7_2.mp4"
+    },
+    {
+      "trial_id": 6,
+      "trial_video_name": "diff_6_1.mp4"
+    },
+    {
+      "trial_id": 12,
+      "trial_video_name": "diff_12_1.mp4"
+    },
+    {
+      "trial_id": 21,
+      "trial_video_name": "diff_21_1.mp4"
+    },
+    {
+      "trial_id": 19,
+      "trial_video_name": "diff_19_1.mp4"
+    },
+    {
+      "trial_id": 16,
+      "trial_video_name": "diff_16_1.mp4"
+    },
+    {
+      "trial_id": 13,
+      "trial_video_name": "diff_13_1.mp4"
+    },
+    {
+      "trial_id": 22,
+      "trial_video_name": "diff_22_1.mp4"
+    },
+    {
+      "trial_id": 2,
+      "trial_video_name": "diff_2_1.mp4"
+    },
+    {
+      "trial_id": 20,
+      "trial_video_name": "diff_20_1.mp4"
+    },
+    {
+      "trial_id": 14,
+      "trial_video_name": "diff_14_1.mp4"
+    },
+    {
+      "trial_id": 17,
+      "trial_video_name": "diff_17_1.mp4"
+    },
+    {
+      "trial_id": 1,
+      "trial_video_name": "diff_1_1.mp4"
+    }
+  ]
+}
