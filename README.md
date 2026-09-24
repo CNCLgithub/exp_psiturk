@@ -76,6 +76,9 @@ The codebase maintains a record of each `condition_list.json` file generated, al
 All data structures concerning the information collected from the participant on each trial are specified in [trial_data.js](psiturk/static/js/trial_data.js).
 The frontend of each trial is implemented in [trial_page.js](psiturk/static/js/trial_page.js). The `register_response` function implemented in [task.js](psiturk/static/js/task.js) is ultimately responsible for the data recorded into the `participants.db` file in each trial.
 
+### Live-Computed Stimuli
+The setup above assumes stimuli are prerecorded files. If your experiment instead needs something computed per trial from the participant's own response (a simulation, a model inference, a generated image), see [Live compute in the trial loop](docs/live-simulation-pipeline.md). It walks through an example where participants place fingers on a soft object and a physics simulation of the resulting grasp, run on a remote server, streams back into the trial page. It also covers a psiTurk stub for developing trials locally.
+
 ### Stop the Experiment
 Once the data collection is complete, run the following command to end the experiment:
 ```bash
